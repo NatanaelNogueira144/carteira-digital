@@ -1,0 +1,26 @@
+{
+  "name": "carteira-digital",
+  "version": "1.0.0",
+  "description": "Monorepo da Carteira Digital",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev:backend": "pnpm --filter backend dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "build:backend": "pnpm --filter backend build",
+    "build:frontend": "pnpm --filter frontend build",
+    "start:dev": "pnpm -r --parallel start:dev",
+    "build": "pnpm -r build"
+  },
+  "keywords": [],
+  "author": "@natanaelnogueira144",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.1",
+      "onFail": "download"
+    }
+  },
+  "type": "module"
+}

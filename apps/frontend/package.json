@@ -1,5 +1,6 @@
 {
-  "name": "carteira-digital",
+  "name": "@apps/frontend",
+  "homepage": "./",
   "version": "1.0.1",
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start:dev": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

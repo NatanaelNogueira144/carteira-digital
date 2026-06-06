@@ -29,7 +29,7 @@ export const Logo = styled.div`
 
 export const Form = styled.form`
     width: 300px;
-    height: 400px;
+    height: 450px;
     padding: 30px;
     border-radius: 10px;
     background-color: ${props => props.theme.colors.tertiary};

@@ -53,15 +53,22 @@ export default function SignUpPage() {
                <Button type="button" onClick={async () => {
                     try {
                         await signUp(request);
-                        alert('Voce se cadastrou com sucesso!');
+                        alert('Você se cadastrou com sucesso!');
                         navigate('/');
                     } catch(error: unknown) {
+                        if(error instanceof Error) {
+                            alert(error.message);
+                        }
+                        
                         if(error instanceof APIError) {
                             setErrors(error.getErrors() ?? {});
                         }
                     }
                 }}>
                     Cadastrar
+                </Button>
+                <Button type="button" onClick={() => navigate('/')}>
+                    Já tem uma conta?
                 </Button>
             </Form>
         </Container>

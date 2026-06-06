@@ -1,14 +1,18 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { BadRequestException, ValidationError, ValidationPipe } from '@nestjs/common';
+import { useContainer } from 'class-validator';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     allowedHeaders: ['content-type', 'authorization', 'accept'],
-    origin: `http://localhost:${process.env.ORIGIN}`,
+    origin: process.env.FRONTEND_BASE_URL,
     credentials: true,
   });
+
+  useContainer(app.select(AppModule), { fallbackOnErrors: true });
+  
   app.useGlobalPipes(
     new ValidationPipe({
       stopAtFirstError: true,
@@ -54,7 +58,7 @@ async function bootstrap() {
       },
     }),
   );
-  await app.listen(process.env.PORT);
+  await app.listen(process.env.BACKEND_PORT);
 }
 
 bootstrap();
