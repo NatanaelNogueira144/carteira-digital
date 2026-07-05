@@ -1,1 +1,0 @@
-export type HttpBody = {[key: string]: unknown}|FormData;

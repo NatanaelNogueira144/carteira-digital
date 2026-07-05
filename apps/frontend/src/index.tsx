@@ -3,14 +3,17 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import { AuthProvider } from './data/contexts/AuthContext';
-import { ThemeProvider } from './data/contexts/ThemeContext';
+import { AuthProvider } from './contexts/AuthContext';
+import { ThemeProvider } from './contexts/ThemeContext';
+import { setupInterceptors } from './core/http/interceptors';
+
+setupInterceptors();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  	<React.StrictMode>
+  <React.StrictMode>
 		<ThemeProvider>
 			<AuthProvider>
 				<App />

@@ -12,11 +12,11 @@ export class AuthGuard implements CanActivate {
 
   async canActivate(
     context: ExecutionContext,
-  ):Promise<boolean> {
+  ): Promise<boolean> {
     const request: Request = context.switchToHttp().getRequest();
     const token = request.headers['authorization']?.split(' ')[1];
 
-    if(!token) {
+    if (!token) {
       throw new UnauthorizedException('Nenhum token fornecido.');
     }
 
@@ -31,13 +31,13 @@ export class AuthGuard implements CanActivate {
         where: {id: payload.sub}
       });
 
-      if(!user) {
+      if (!user) {
         throw new UnauthorizedException('Usuário não encontrado!');
       }
 
       request.user = user;
       return true;
-    } catch(e) {
+    } catch (e) {
       console.error(e);
       throw new UnauthorizedException('Token inválido', { cause: e });
     }

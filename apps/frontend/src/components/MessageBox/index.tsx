@@ -1,13 +1,18 @@
 import { Container }  from './styles';
 
 interface IMessageBoxProps {
-    title: string;
-    description: string;
-    footerText: string;
-    icon: string;
+  title: string;
+  description: string;
+  footerText: string;
+  icon: string;
 }
 
-export default function MessageBox({ title, description, footerText, icon }: IMessageBoxProps) {
+export default function MessageBox({
+  title,
+  description,
+  footerText,
+  icon
+}: IMessageBoxProps) {
 	return (
 		<Container>
 			<header>

@@ -1,9 +1,9 @@
 import { Container } from "./styles";
 
 interface IInputFeedbackProps {
-    message: string
+  message: string
 }
 
 export default function InputFeedback({ message }: IInputFeedbackProps) {
-    return <Container>{message}</Container>;
+  return <Container>{message}</Container>;
 }

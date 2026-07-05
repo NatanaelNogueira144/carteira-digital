@@ -1,10 +1,10 @@
 export class Gain {
-    id: number;
-    userId: number;
-    amount: number;
-    date: Date;
-    description: string;
-    frequency: 'recorrente' | 'eventual' | 'emprestimo';
-    createdAt: Date;
-    updatedAt: Date;
+  id: number;
+  userId: number;
+  amount: number;
+  date: Date;
+  description: string;
+  frequency: 'recorrente' | 'eventual' | 'emprestimo';
+  createdAt: Date;
+  updatedAt: Date;
 }

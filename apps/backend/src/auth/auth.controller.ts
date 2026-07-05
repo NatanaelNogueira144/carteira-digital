@@ -8,24 +8,24 @@ import { Request } from 'express';
 
 @Controller('auth')
 export class AuthController {
-    constructor(
-        private readonly authService: AuthService,
-        private readonly usersService: UsersService
-    ) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly usersService: UsersService
+  ) {}
 
-    @Post('login')
-    login(@Body() loginDto: LoginDto) {
-        return this.authService.login(loginDto);
-    }
+  @Post('login')
+  login(@Body() loginDto: LoginDto) {
+    return this.authService.login(loginDto);
+  }
 
-    @UseGuards(AuthGuard)
-    @Get('me')
-    me(@Req() req: Request) {
-        return this.usersService.findOne(req.user!.id);
-    }
+  @UseGuards(AuthGuard)
+  @Get('me')
+  me(@Req() req: Request) {
+    return this.usersService.findOne(req.user!.id);
+  }
 
-    @Post('register')
-    register(@Body() createUserDto: CreateUserDto) {
-        return this.usersService.create(createUserDto);
-    }
+  @Post('register')
+  register(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.create(createUserDto);
+  }
 }

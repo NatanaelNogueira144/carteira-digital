@@ -34,7 +34,7 @@ async function bootstrap() {
                 ? `${parentProperty}.${error.property}`
                 : error.property;
 
-              if(error.constraints) {
+              if (error.constraints) {
                 errors[propertyPath] = Object.values(error.constraints)[0];
               }
 

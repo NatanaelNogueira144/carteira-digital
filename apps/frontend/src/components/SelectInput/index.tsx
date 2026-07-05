@@ -2,15 +2,19 @@ import React from 'react';
 import { Container }  from './styles';
 
 interface ISelectInputProps {
-    options: {
-        value: string | number;
-        label: string | number;
-    }[],    
-    onChange(event: React.ChangeEvent<HTMLSelectElement>): void | undefined;
-    defaultValue?: string | number;
+  options: {
+    value: string | number;
+    label: string | number;
+  }[],    
+  onChange(event: React.ChangeEvent<HTMLSelectElement>): void | undefined;
+  defaultValue?: string | number;
 }
 
-export default function SelectInput({ options, onChange, defaultValue }: ISelectInputProps) {
+export default function SelectInput({
+  options,
+  onChange,
+  defaultValue
+}: ISelectInputProps) {
 	return (
 		<Container>
 			<select onChange={onChange} defaultValue={defaultValue}>
